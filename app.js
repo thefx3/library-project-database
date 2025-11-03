@@ -5,9 +5,10 @@ console.log("Environment loaded:", process.env.DB_HOST, process.env.DB_DATABASE)
 const express = require("express");
 const app = express();
 const path = require("node:path");
-const initializeLanguages = require("./db/initdb");
+const { initializeLanguages, initializeCategories } = require("./db/initdb");
 const indexRouter = require("./routes/indexRouter");
 const updateRouter = require("./routes/updateRouter");
+const globalRouter = require("./routes/globalRouter");
 const assetsPath = path.join(__dirname, "public");
 
 app.use(express.static(assetsPath));
@@ -18,12 +19,14 @@ app.set("view engine", "ejs");
 
 app.use("/", indexRouter);
 app.use("/", updateRouter);
+app.use("/", globalRouter);
 
 
 const PORT = 3000;
 (async () => {
   try {
     await initializeLanguages();
+    await initializeCategories();
     app.listen(PORT, () => {
       console.log(`✅ App listening on port ${PORT}`);
     });

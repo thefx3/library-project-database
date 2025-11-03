@@ -7,16 +7,22 @@ async function homePage(req, res){
 };
 
 async function globalPage (req, res){
-    res.render("global");
+    const categories = await db.getAllCategories();
+    res.render("global", { categories });
 }
 
 async function updateLanguages (req, res){
     const languages = await db.getAllLanguages();
-    res.render("update", { languages });
+    res.render("updatelang", { languages });
 }
 
+async function updateCategories (req, res){
+    const categories = await db.getAllCategories();
+    res.render("updatecat", { categories });
+}
 module.exports = {
     homePage, 
     globalPage, 
-    updateLanguages
+    updateLanguages,
+    updateCategories
 };

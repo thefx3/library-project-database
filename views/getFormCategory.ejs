@@ -1,0 +1,19 @@
+<head>
+    <title>Update</title>
+    <link rel="stylesheet" href="/root.css">
+    <link rel="stylesheet" href="/update.css">
+  </head>
+
+<body>
+
+<%- include("partials/header") %>
+
+<div class="update-form">
+    <h1 class="update-category">Add Category</h1>
+    <form class="add-category" action="/categories/add" method="POST">
+        <input type="text" name="category" placeholder="Enter category" />
+        <button type="submit" class="edit-btn">Save</button>
+    </form>
+</div>
+
+</body>
