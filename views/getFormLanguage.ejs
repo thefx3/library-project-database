@@ -1,0 +1,20 @@
+<head>
+    <title>Update</title>
+    <link rel="stylesheet" href="/root.css">
+    <link rel="stylesheet" href="/update.css">
+  </head>
+
+<body>
+
+<%- include("partials/header") %>
+
+
+<div class="update-form">
+    <h1 class="update-language">Add Language</h1>
+    <form class="add-language" action="/languages/add" method="POST">
+        <input type="text" name="language" placeholder="Enter language" />
+        <button type="submit" class="edit-btn">Save</button>
+    </form>
+</div>
+
+</body>

@@ -1,0 +1,152 @@
+.update-form {
+    width: 600px;
+    max-width: 1000px;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+    border-radius: 16px;
+    background: #f8faff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header (Update + Add button) */
+  .update-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .update-language {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #182848;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .add-btn {
+    background: linear-gradient(45deg, #4b6bb7b2, #182848);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .add-btn:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+  
+  /* List */
+  .update-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  /* Each row */
+  .language-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border: 1px solid #182848;
+    border-radius: 10px;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+  }
+
+ .add-language {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  /* Add language */
+
+  input[type="text"] {
+    width: 80%;
+    padding: 6px 12px;
+    border: 1px solid #03359b;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .language-item:hover {
+    background: #eef3ff;
+    transform: scale(1.01);
+  }
+  
+  /* Language name */
+  .language-item span {
+    font-weight: 500;
+    color: #182848;
+  }
+  
+  /* Buttons */
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  /* Edit */
+  .edit-btn {
+    background: #4b6bb7b2;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .edit-btn:hover {
+    background: #182848;
+  }
+  
+  /* Delete */
+  .delete-btn {
+    background: #c53030;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background: #9b1c1c;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .update-header {
+      flex-direction: column;
+      gap: 15px;
+    }
+    .update-form {
+        width: 400px;
+    }
+  
+    .language-item {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .actions {
+      justify-content: flex-end;
+    }
+  }
+  

@@ -1,12 +1,13 @@
 <html>
     <head>
         <title>Library</title>
-        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/home.css">
+        <link rel="stylesheet" href="/root.css">
     </head>
     <body>
         <%- include("partials/header") %>
         <div class="home">
-            <a class="section-1" href="/global">
+            <a class="section-1" href="/global/categories">
                 <h1>GLOBAL - ALL LEVELS</h1>
                 <p>General resources to make you progress in any language</p>
             </a>
@@ -14,18 +15,15 @@
             <hr></hr>
 
             <div class="section-2">
-                <a id="french" href="/french" data-language="french"> FRENCH </a>
-                <a id="english" href="/english" data-language="english"> ENGLISH </a>
-                <a id="spanish" href="/spanish" data-language="spanish"> SPANISH </a>
-                <a id="italian" href="/italian" data-language="italian"> ITALIAN </a>
-                <a id="german" href="/portuguese" data-language="portuguese"> PORTUGUESE </a>
-                <a id="german" href="/german" data-language="german"> GERMAN </a>
+                <% languages.forEach(lang => { %>
+                  <a href="/<%= lang.language.toLowerCase() %>">
+                    <%= lang.language %>
+                  </a>
+                <% }) %>
             </div>
         </div>
 
-
-
-
+        <a href="/update/languages" id="update-btn">UPDATE LANGUAGES</a>
 
     </body>
 
