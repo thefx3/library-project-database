@@ -12,7 +12,7 @@
 
             <div class="categories">
                 <% categories.forEach(cat => { %>
-                    <a class="category" href="/<%= cat.category.toLowerCase() %>">
+                    <a class="category" href="/global/resources/<%= cat.category.toLowerCase() %>">
                       <%= cat.category %>
                     </a>
                 <% }) %>
@@ -20,7 +20,10 @@
             
         </div>
 
-        <a href="/update/categories" id="update-btn">UPDATE CATEGORIES</a>
+        <div class="btn-container">
+            <a href="/update/categories" id="update-btn">UPDATE CATEGORIES</a>
+            <a href="/global/resources/all" id="update-btn">VIEW ALL RESOURCES</a>
+        </div>
 
     </body>
 

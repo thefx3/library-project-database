@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Filtered Resources</title>
+    <link rel="stylesheet" href="/root.css">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/global.css">
+    <style>
+      .resources-container {
+        max-width: 1000px;
+        margin: 60px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .resource-card {
+        background: #f8faff;
+        border: 1px solid #182848;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+
+      .resource-card:hover {
+        background: #eef3ff;
+        transform: scale(1.02);
+      }
+
+      .resource-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .resource-name {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #182848;
+      }
+
+      .resource-meta {
+        margin-top: 10px;
+        font-size: 0.95rem;
+        color: #444;
+      }
+
+      .back-btn {
+        display: inline-block;
+        margin: 30px auto;
+        background: linear-gradient(45deg, #4b6bb7b2, #182848);
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        opacity: 0.9;
+        transform: scale(1.05);
+      }
+
+    </style>
+  </head>
+  <body>
+    <%- include("partials/header") %>
+
+    <div class="resources-container">
+      <% if (resources.length === 0) { %>
+        <p>No resources found for this category.</p>
+      <% } else { %>
+        <% resources.forEach(res => { %>
+          <div class="resource-card">
+            <div class="resource-header">
+              <span class="resource-name"><%= res.name %></span>
+              <span class="resource-category"><%= res.category %></span>
+            </div>
+            <div class="resource-meta">
+              <p><strong>Type:</strong> <%= res.type %></p>
+              <p><strong>Subcategory:</strong> <%= res.subcategory %></p>
+              <p><strong>Platform:</strong> <%= res.platform %></p>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="/global/categories" class="back-btn">← Back to Categories</a>
+    </div>
+  </body>
+</html>

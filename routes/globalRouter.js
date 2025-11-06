@@ -1,14 +1,15 @@
 const { Router } = require("express");
 const router = Router();
-const updateController = require("../controllers/updateController");
 const libraryController = require("../controllers/libraryController");
 
-router.get("/update/categories", libraryController.updateCategories); //Route 1
+ //Route 1 - update categories
 
-router.get("/categories/add", updateController.getCategoryForm);
-router.post("/categories/add", updateController.addCategory);
-router.post("/categories/delete/:id", updateController.deleteCategory);
 
+
+//Route 2 - view filtered resources
+//router.get("/resources/:filtertype", libraryController.getFilteredResources);
+
+//Route 3 - view all resources
 
 
 module.exports = router;

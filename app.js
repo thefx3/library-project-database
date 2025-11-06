@@ -5,7 +5,7 @@ console.log("Environment loaded:", process.env.DB_HOST, process.env.DB_DATABASE)
 const express = require("express");
 const app = express();
 const path = require("node:path");
-const { initializeLanguages, initializeCategories } = require("./db/initdb");
+const { initializeLanguages, initializeCategories, initializeResources } = require("./db/initdb");
 const indexRouter = require("./routes/indexRouter");
 const updateRouter = require("./routes/updateRouter");
 const globalRouter = require("./routes/globalRouter");
@@ -27,6 +27,7 @@ const PORT = 3000;
   try {
     await initializeLanguages();
     await initializeCategories();
+    await initializeResources();
     app.listen(PORT, () => {
       console.log(`✅ App listening on port ${PORT}`);
     });
